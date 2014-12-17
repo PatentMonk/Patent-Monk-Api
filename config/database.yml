@@ -1,0 +1,26 @@
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: api_test
+  pool: 5
+  host: 127.0.0.1
+  username: root
+  password:
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: heroku_22bad7c3224c5b7
+  pool: 5
+  host: us-cdbr-iron-east-01.cleardb.net
+  username: b9b56f3d76c819
+  password: a58c2253
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: heroku_22bad7c3224c5b7
+  pool: 5
+  host: us-cdbr-iron-east-01.cleardb.net
+  username: b9b56f3d76c819
+  password: a58c2253
