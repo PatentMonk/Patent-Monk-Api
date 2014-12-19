@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :confirmable
+  acts_as_token_authenticatable
+  devise :database_authenticatable, :registerable
          
   has_many :tickets, dependent: :destroy
   accepts_nested_attributes_for :tickets
