@@ -10,11 +10,10 @@ test:
 development:
   adapter: mysql2
   encoding: utf8
-  database: heroku_22bad7c3224c5b7
+  database: pmapi
   pool: 5
-  host: us-cdbr-iron-east-01.cleardb.net
-  username: b9b56f3d76c819
-  password: a58c2253
+  username: root
+  password: Texman6626
 
 production:
   adapter: mysql2

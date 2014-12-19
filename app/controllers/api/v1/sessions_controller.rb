@@ -9,13 +9,22 @@ class Api::V1::SessionsController < Devise::SessionsController
    sign_in(resource_name, resource)
  
    current_user.update authentication_token: nil
- 
+   photo = current_user.avatars.where(main: true).first
+   photo = asset_path('monk_head_trans.png') if photo.nil?
    respond_to do |format|
      format.json {
        render :json => {
-         :user => current_user,
-         :status => :ok,
-         :authentication_token => current_user.authentication_token
+          id: current_user.id,
+          username: (current_user.first_name + ' ' + current_user.middle_name + ' ' + current_user.last_name).squish,
+          token: current_user.authentication_token,
+          about_me: current_user.description.description,
+          profile_photo: photo,
+          backgrond_photo: '',
+          is_banned: 0,
+          status: 1,
+          added: current_user.created_at,
+          updated: nil,
+          success: true
        }
      }
    end
