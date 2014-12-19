@@ -19,7 +19,7 @@ class Api::V1::SessionsController < Devise::SessionsController
           token: current_user.authentication_token,
           about_me: current_user.description.description,
           profile_photo: photo,
-          backgrond_photo: '',
+          background_photo: '',
           is_banned: 0,
           status: 1,
           added: current_user.created_at,
