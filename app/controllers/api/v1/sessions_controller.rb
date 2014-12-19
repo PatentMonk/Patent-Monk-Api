@@ -9,8 +9,8 @@ class Api::V1::SessionsController < Devise::SessionsController
    sign_in(resource_name, resource)
  
    current_user.update authentication_token: nil
-   photo = current_user.avatars.where(main: true).first
-   photo = asset_path('monk_head_trans.png') if photo.nil?
+   photo = current_user.avatar.where(main: true).first
+   photo = photo.nil? ? asset_path('monk_head_trans.png') : photo.img_url
    respond_to do |format|
      format.json {
        render :json => {
