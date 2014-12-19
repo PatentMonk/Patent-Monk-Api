@@ -9,6 +9,7 @@ gem 'devise'
 gem 'simple_token_authentication', '~> 1.0'
 gem 'runtimeerror_notifier'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'paperclip'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
