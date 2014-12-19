@@ -40,6 +40,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     json (1.8.1)
     mail (2.6.3)
@@ -47,6 +50,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.0)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     mysql2 (0.3.16)
     orm_adapter (0.5.0)
     rack (1.5.2)
@@ -73,6 +77,12 @@ GEM
     rake (10.4.2)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    runtimeerror_notifier (0.0.24)
+      actionmailer
+      actionpack
+      activesupport
+      httparty (>= 0.10.0)
+      rake
     simple_token_authentication (1.7.0)
       actionmailer (>= 3.2.6, < 5)
       actionpack (>= 3.2.6, < 5)
@@ -106,6 +116,7 @@ DEPENDENCIES
   mysql2
   rails (= 4.1.7)
   rails-api
+  runtimeerror_notifier
   simple_token_authentication (~> 1.0)
   spring
   tzinfo-data

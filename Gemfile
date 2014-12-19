@@ -7,6 +7,7 @@ gem 'spring', :group => :development
 gem 'mysql2'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0'
+gem 'runtimeerror_notifier'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # To use ActiveModel has_secure_password
