@@ -1,5 +1,8 @@
 class Api::V1::UsersController < ApplicationController
   def index
+    Rails.logger.info "HEADERS"
+    Rails.logger.info request.env
+    Rails.logger.info "HEADERS"
     respond_to do |format|
      format.json {
        render :json => {success: true, payload: User.where(lawyer: true).joins("LEFT JOIN avatars on avatars.user_id = users.id AND avatars.main = true").select("users.id, users.first_name, users.last_name, avatars.img_url")}
