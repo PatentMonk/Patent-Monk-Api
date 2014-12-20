@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
                   .joins("LEFT JOIN avatars on avatars.user_id = users.id AND avatars.main = true")
                   .joins('descriptions on descriptions.user_id = users.id')
                   .select("users.id, users.first_name, users.middle_name, users.last_name, avatars.img_url, star_count.descriptions.description, bill_per_hour")
-     }
+     end
    end
   end
 
