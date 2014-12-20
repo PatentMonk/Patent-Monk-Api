@@ -10,7 +10,7 @@ class Api::V1::SessionsController < Devise::SessionsController
  
    current_user.update authentication_token: nil
    photo = current_user.avatar.where(main: true).first
-   photo = photo.nil? ? asset_path('monk_head_trans.png') : photo.img_url
+   photo = photo.nil? ? "https://patentmonkapi.herokuapp.com#{asset_path('monk_head_trans.png')}" : photo.img_url
    respond_to do |format|
      format.json {
        render :json => {
