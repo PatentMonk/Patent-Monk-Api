@@ -15,6 +15,7 @@ class Api::V1::SessionsController < Devise::SessionsController
      format.json {
        render :json => {
           id: current_user.id,
+          email: current_user.email,
           username: (current_user.first_name + ' ' + current_user.middle_name + ' ' + current_user.last_name).squish,
           token: current_user.authentication_token,
           about_me: current_user.description.description,
