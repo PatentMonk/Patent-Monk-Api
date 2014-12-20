@@ -13,10 +13,16 @@ class Api::V1::UsersController < ApplicationController
       Rails.logger.info 'rescue'
       puts e
       Rails.logger.info e
+      merp = e
+      derp = user.errors
       user = []
       puts 'rescue'
       Rails.logger.info 'rescue'
     end
+    Rails.logger.info 'merp'
+    Rails.logger.info merp
+    Rails.logger.info 'derp'
+    Rails.logger.info derp
     respond_to do |format|
      format.json do
        render json: user
