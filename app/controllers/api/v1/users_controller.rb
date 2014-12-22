@@ -8,7 +8,14 @@ class Api::V1::UsersController < ApplicationController
             CONCAT(users.first_name, ' ', users.middle_name, ' ', users.last_name) 
           ELSE
             CONCAT(users.first_name, ' ', users.last_name) 
-          END as user_name, COALESCE(avatars.img_url,'https://patentmonkapi.herokuapp.com/assets/monk_head_trans.png') as img_url, star_count, descriptions.description, bill_per_hour")
+          END as user_name, COALESCE(avatars.img_url,'https://patentmonkapi.herokuapp.com/assets/monk_head_trans.png') as img_url, 
+          CASE star_count
+          WHEN 0
+            THEN 0
+          ELSE
+            star_score / star_count
+          END AS star_score,
+          star_count, descriptions.description, bill_per_hour")
     rescue => e
       user = []
     end
